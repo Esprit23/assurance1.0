@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Assurance ARO</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+
+	<!-- Styles -->
+	{% include 'partials/styles.html.twig' %}
+</head>
+<body>
+	<div class="wrapper">
+		<!-- Navbar Header -->
+		{% include 'partials/navbar_header.html.twig' %}
+
+		<!-- Sidebar -->
+		{% include 'partials/sidebar.html.twig' %}
+
+        <div class="main-panel">
+            <div class="content">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h4 class="page-title"> Notifications </h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="add-row" class="display table table-striped table-hover" >
+											<thead>
+												<tr>
+													<th>Num de Compte</th>
+													<th>Nom et Prénoms</th>
+                                                    <th>Adresse</th>
+                                                    <th>Télephone</th>
+													<th style="width: 10%"></th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Num de Compte</th>
+													<th>Nom et Prénoms</th>
+													<th>Adresse</th>
+                                                    <th>Télephone</th>
+                                                    <th>Action</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												{% for client in clientsInvalide %}
+													<tr>
+														<td> {{ client.numCompte }} </td>
+														<td> {{ client.nomPrenom }} </td>
+														<td> {{ client.adresse }} </td>
+														<td> {{ client.telephone }} </td>
+														<td>
+													    	<div class="form-button-action">
+																<button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Renouveller">
+																	<a href="{{ path('app_AddAssurance') }}">
+																		<i class="fa fa-pen-square"></i>
+																	</a>
+																</button>
+															</div>
+														</td>
+													</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+	</div>
+	
+	{% include 'partials/javascript.html.twig' %}
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Assurance ARO</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+
+	<!-- Styles -->
+	{% include 'partials/styles.html.twig' %}
+</head>
+<body>
+	<div class="wrapper">
+		<!-- Navbar Header -->
+		{% include 'partials/navbar_header.html.twig' %}
+
+		<!-- Sidebar -->
+		{% include 'partials/sidebar.html.twig' %}
+
+		<div class="main-panel">
+			<div class="content">
+				<div class="page-inner">
+					<div class="page-header">
+						<h4 class="page-title">Formulaire assurance</h4>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								{{ form_start(form) }}
+									<div class="card-header">
+										<div class="card-title">Véhicules</div>
+									</div>
+									<div class="card-body">
+										
+										<div class="form-group">
+											{{ form_label(form.numOrdre) }}
+											{{ form_widget(form.numOrdre, {'attr': {'class': 'form-control', 'placeholder': 'Numero d ordre'}}) }}
+										</div>
+										<div class="form-group">
+											{{ form_label(form.numPolice) }}
+											{{ form_widget(form.numPolice, {'attr': {'class': 'form-control', 'placeholder': 'Numero Police'}}) }}
+										</div>
+										<div class="form-group">
+											{{ form_label(form.dateEffet) }}
+											{{ form_widget(form.dateEffet, {'attr': {'class': 'form-control', 'placeholder': 'Date d effet'}}) }}
+										</div>
+										<div class="form-group">
+											{{ form_label(form.mois) }}
+											{{ form_widget(form.mois, {'attr': {'class': 'form-control', 'placeholder': 'Mois'}}) }}
+										</div>
+                                        <div class="form-group">
+											{{ form_label(form.client) }}
+											{{ form_widget(form.client, {'attr': {'class': 'form-control', 'placeholder': 'Client'}}) }}
+										</div>
+										<div class="form-group">
+											{{ form_label(form.vehicule) }}
+											{{ form_widget(form.vehicule, {'attr': {'class': 'form-control', 'placeholder': 'Vehicule'}}) }}
+										</div>
+									</div>
+									<div class="card-action">
+										<button type="submit" class="btn btn-success">Enregistrer</button>
+										<a href="{{ path('app_assurance') }}" class="btn btn-danger">Annuler</a>
+									</div>
+								{{ form_end(form) }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	{% include 'partials/javascript.html.twig' %}  
+</body>
+</html>
